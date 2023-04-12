@@ -5,6 +5,7 @@ import os
 import re
 import instaloader
 
+print("bot is starting")
 try:
     bot = telebot.TeleBot("6264361604:AAFTop0Ofs3Oq00yltdfA-8Mngcm8rdSpm8")
 except Exception as e:
