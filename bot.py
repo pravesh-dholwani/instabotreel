@@ -42,7 +42,9 @@ def send_to_sender(message):
 
 
 
-
-bot.infinity_polling()
+try:
+    bot.infinity_polling()
+except Exception as e:
+    print("BOT ALREADY STARTED")
 # print("bot started")
 
