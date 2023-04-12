@@ -5,8 +5,8 @@ import os
 import re
 import instaloader
 
-print("bot is starting")
 try:
+    # bot = telebot.TeleBot("6245614297:AAHSK1fRtjevCo3WnsIQamGEBCX-2vAYQsA")
     bot = telebot.TeleBot("6264361604:AAFTop0Ofs3Oq00yltdfA-8Mngcm8rdSpm8")
 except Exception as e:
     print("bot failed")
@@ -38,7 +38,6 @@ def send_to_sender(message):
 
         bot.send_video(chat_id=message.chat.id , video=reel_bytes , timeout=300)
     except Exception as e:
-        bot.reply_to(message , message.text)
         bot.reply_to(message , str(e))
         bot.reply_to(message , "Either your message is not a reel link or it is private")
     # with open(video_file, 'rb') as f:
