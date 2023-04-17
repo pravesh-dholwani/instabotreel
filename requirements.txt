@@ -1,3 +1,4 @@
 pyTelegramBotApi
 insta-scrape
 instaloader
+python-telegram-bot==12.0
