@@ -90,8 +90,8 @@ def echo(update, context):
     except Exception as e:
         print("exception")
         print(e)
-        context.bot.reply_to(update.message , str(e))
-        context.bot.reply_to(update.message , "Either your message is not a reel link or it is private")
+        context.bot.send_message(chat_id =update.message.chat.id , text=str(e))
+        context.bot.send_message(chat_id=update.message.chat.id , text="Either your message is not a reel link or it is private")
     # context.bot.send_message(chat_id=update.message.chat_id, text=update.message.text)
 
 updater = Updater(token=TOKEN, use_context=True)
