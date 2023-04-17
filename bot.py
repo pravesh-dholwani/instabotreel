@@ -59,14 +59,20 @@ import os
 import telegram
 from telegram.ext import CommandHandler, MessageHandler, Filters, Updater
 import io
+import logging
+
+# Set up the logging configuration
+logging.basicConfig( level=logging.DEBUG)
 
 TOKEN = "6264361604:AAFTop0Ofs3Oq00yltdfA-8Mngcm8rdSpm8"
 bot = telegram.Bot(token=TOKEN)
 
 def start(update, context):
+    
     context.bot.send_message(chat_id=update.message.chat_id, text="Hello, I'm a bot!")
 
 def echo(update, context):
+    logging.info("User Name " + update.message.from_user.username)
     print(update.message.text)
     # print(update.message.from_user.username)
     # print(update.mesage)
@@ -90,7 +96,7 @@ def echo(update, context):
     except Exception as e:
         print("exception")
         print(e)
-        context.bot.send_message(chat_id =update.message.chat.id , text=str(e))
+        context.bot.send_message(chat_id=update.message.chat.id , text=str(e))
         context.bot.send_message(chat_id=update.message.chat.id , text="Either your message is not a reel link or it is private")
     # context.bot.send_message(chat_id=update.message.chat_id, text=update.message.text)
 
